@@ -2,7 +2,7 @@ backend:
   name: github
   repo: engkhaled160/khaled-portfolio
   branch: main
-  base_url: https://khaled-portfolio-2026.netlify.app
+base_url: https://khaled-portfolio-2026.engkhaled160.workers.dev
 
 locale: "ar"
 media_folder: "uploads"
