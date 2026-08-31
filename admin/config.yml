@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: engkhaled160/khaled-portfolio
+  branch: main
+  base_url: https://khaled-portfolio-2026.netlify.app
+
+locale: "ar"
+media_folder: "uploads"
+public_folder: "uploads"
+
+collections:
+  - name: "projects"
+    label: "المشاريع"
+    label_singular: "مشروع"
+    files:
+      - name: "projects"
+        label: "كل المشاريع (إضافة / تعديل / حذف)"
+        file: "data/projects.json"
+        fields:
+          - name: "projects"
+            label: "المشاريع"
+            label_singular: "مشروع"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - { label: "اسم المشروع (عربي)", name: "name", widget: "string" }
+              - { label: "Project Name (English)", name: "nameEn", widget: "string" }
+              - label: "تصنيف المشروع"
+                name: "type"
+                widget: "select"
+                options:
+                  - { label: "فيلا / قسيمة", value: "villa" }
+                  - { label: "مبنى", value: "building" }
+                  - { label: "مبنى شاهق / برج", value: "highrise" }
+                  - { label: "خزان", value: "tanks" }
+                  - { label: "أخرى", value: "other" }
+              - label: "حالة المشروع"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "جاري التنفيذ", value: "active" }
+                  - { label: "منتهي", value: "completed" }
+                  - { label: "متوقف", value: "paused" }
+              - { label: "الموقع (عربي)", name: "location", widget: "string" }
+              - { label: "Location (English)", name: "locationEn", widget: "string" }
+              - { label: "تاريخ البداية (مثال 01/08/2026)", name: "date", widget: "string", required: false }
+              - { label: "الشركة المنفذة", name: "company", widget: "string", required: false }
+              - { label: "الوصف (عربي)", name: "desc", widget: "text" }
+              - { label: "Description (English)", name: "descEn", widget: "text" }
+              - label: "صورة الغلاف"
+                name: "cover"
+                widget: "image"
+                required: false
+                media_folder: "/uploads/covers"
+                public_folder: "uploads/covers"
+              - label: "وسوم (اختياري)"
+                name: "tags"
+                widget: "list"
+                required: false
+                field: { label: "وسم", name: "tag", widget: "string" }
+              - label: "تحديثات المشروع (الجدول الزمني)"
+                name: "updates"
+                widget: "list"
+                required: false
+                summary: "{{fields.date}} — {{fields.text}}"
+                fields:
+                  - label: "نوع التحديث"
+                    name: "type"
+                    widget: "select"
+                    default: "update"
+                    options:
+                      - { label: "📝 تحديث يومي", value: "update" }
+                      - { label: "🔴 درس مستفاد", value: "lesson" }
+                      - { label: "✅ إنجاز", value: "milestone" }
+                  - { label: "التاريخ (اختياري)", name: "date", widget: "string", required: false }
+                  - { label: "اسم البند (مثال: أساسات، بياض...)", name: "band", widget: "string", required: false }
+                  - { label: "نص التحديث", name: "text", widget: "text", required: false }
+                  - { label: "ظاهر للزوار", name: "public", widget: "boolean", default: true }
+                  - label: "صور التحديث"
+                    name: "photos"
+                    widget: "list"
+                    required: false
+                    field:
+                      label: "صورة"
+                      name: "photo"
+                      widget: "image"
+                      media_folder: "/uploads/updates"
+                      public_folder: "uploads/updates"
