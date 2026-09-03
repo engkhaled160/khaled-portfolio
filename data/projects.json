@@ -715,7 +715,21 @@
       "descEn": "A 400 m² single-façade residential plot distinguished by cornices and pronounced detailing that give it a modern character, comprising ground, first, and roof floors. As project engineer, I managed the structural and concrete works — coordinating subcontractors and the consultant and controlling quality and schedule through to handover of the concrete structure (finishing carried out by the owner).",
       "cover": "uploads/covers/1785153031664.jpg",
       "tags": [],
-      "updates": [],
+      "updates": [
+        {
+          "type": "milestone",
+          "date": "",
+          "band": "General",
+          "text": "",
+          "public": true,
+          "photos": [
+            "uploads/updates/pasted-image-1788421790594.png",
+            "uploads/updates/pasted-image-1788421801606.png",
+            "uploads/updates/pasted-image-1788421812007.png",
+            "uploads/updates/pasted-image-1788421821177.png"
+          ]
+        }
+      ],
       "id": 1785153031664
     }
   ]
