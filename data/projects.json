@@ -597,7 +597,23 @@
       "descEn": "A 400 m² residential plot with three façades in a neoclassical design, featuring a basement plus ground, first, second, and roof floors. As project engineer, I managed the structural and concrete works — coordinating subcontractors and the consultant and controlling quality and schedule through to handover of the concrete structure (finishing carried out by the owner).",
       "cover": "uploads/covers/1785151842813.jpg",
       "tags": [],
-      "updates": [],
+      "updates": [
+        {
+          "type": "milestone",
+          "date": "",
+          "band": "General",
+          "text": "",
+          "public": true,
+          "photos": [
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.37.21 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.36.40 AM (1).jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.37.39 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.36.41 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.37.48 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.36.40 AM.jpeg"
+          ]
+        }
+      ],
       "id": 1785151842813
     },
     {
