@@ -535,7 +535,20 @@
       "descEn": "A 400 m² corner residential plot with two façades, comprising ground, first, and roof floors, delivered on a turnkey basis. As project engineer, I managed the full project from award to handover — structural and finishing works, subcontractor management, consultant coordination, cost breakdowns, and quality and schedule control.",
       "cover": "uploads/covers/1785152904318.jpg",
       "tags": [],
-      "updates": [],
+      "updates": [
+        {
+          "type": "milestone",
+          "date": "",
+          "band": "General",
+          "text": "",
+          "public": true,
+          "photos": [
+            "uploads/updates/pasted-image-1788422186295.png",
+            "uploads/updates/pasted-image-1788422201375.png",
+            "uploads/updates/pasted-image-1788422239058.png"
+          ]
+        }
+      ],
       "id": 1785152904318
     },
     {
