@@ -567,7 +567,21 @@
       "descEn": "A 400 m² corner residential plot with two façades in a modern design, featuring a basement with a skylit swimming pool, plus ground, first, and roof floors. As project engineer, I managed the structural and concrete works — coordinating subcontractors and the consultant and controlling quality and schedule through to handover of the concrete structure (finishing carried out by the owner).",
       "cover": "uploads/covers/1785151842812.jpg",
       "tags": [],
-      "updates": [],
+      "updates": [
+        {
+          "type": "milestone",
+          "date": "",
+          "band": "General",
+          "text": "",
+          "public": true,
+          "photos": [
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.11.49 AM (1).jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.11.50 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.11.49 AM.jpeg",
+            "uploads/updates/WhatsApp Image 2026-09-03 at 10.11.50 AM (1).jpeg"
+          ]
+        }
+      ],
       "id": 1785151842812
     },
     {
