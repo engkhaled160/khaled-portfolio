@@ -13,7 +13,19 @@
       "descEn": "A tower comprising 50 storeys above ground plus 4 podium levels and a basement, with a total plot area of 2,000 m², located in Al-Qibla, Kuwait City, for Tabarak United. I've been overseeing the site as Site Manager from the very start of excavation works (since 1/8/2026) — reporting directly to the Project Manager with full site authority over technical and administrative matters: leading execution teams, coordinating between contractors, and overseeing quality and schedules through to handover.",
       "cover": "uploads/covers/basman_cover_enhanced.jpg",
       "tags": [],
-      "updates": [],
+      "updates": [
+        {
+          "type": "update",
+          "date": "05/08/206",
+          "band": "Excavation - Part 1",
+          "text": "Excavation is more than moving soil ⛏️\n\nWe've started work on an administrative and commercial tower in Kuwait, and the first step was excavation. In the early phase, before shoring begins, digging is our best chance to find out what's really underground.\n\nWhat we focus on in the first weeks:\n\n🔹 Soil investigation: Is the ground stiff, or are there debris and unexpected layers? This shapes the entire excavation and shoring plan.\n🔹 Utility detection: Water lines, power cables, and other services. An unexpected utility can halt work or create a safety hazard, so we dig carefully and handle each one with a plan.\n\nBecause this is a fast-track project, we work day and night. That takes tight shift coordination and continuous safety and quality monitoring around the clock.\n\nMy takeaway: the right decisions in the first week of excavation save weeks of trouble later.",
+          "public": true,
+          "photos": [
+            "uploads/updates/IMG-20260808-WA0090.jpg",
+            "uploads/updates/WhatsApp Image 2026-09-19 at 10.11.09 AM.jpeg"
+          ]
+        }
+      ],
       "id": 1788165629345
     },
     {
