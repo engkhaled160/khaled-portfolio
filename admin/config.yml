@@ -38,6 +38,114 @@ collections:
               - { label: "رقم الشهادة (اختياري)", name: "number", widget: "string", required: false }
               - { label: "رابط التحقق (اختياري)", name: "url", widget: "string", required: false }
 
+  - name: "personal"
+    label: "البيانات الشخصية"
+    files:
+      - name: "personal"
+        label: "الاسم والمسمى والموقع والشارات"
+        file: "data/hero.json"
+        fields:
+          - label: "الاسم"
+            name: "name"
+            widget: "object"
+            fields:
+              - { label: "بالعربي", name: "ar", widget: "string" }
+              - { label: "English", name: "en", widget: "string" }
+          - label: "المسمى الوظيفي"
+            name: "title"
+            widget: "object"
+            fields:
+              - { label: "بالعربي", name: "ar", widget: "string" }
+              - { label: "English", name: "en", widget: "string" }
+          - label: "الموقع"
+            name: "loc"
+            widget: "object"
+            fields:
+              - { label: "بالعربي", name: "ar", widget: "string" }
+              - { label: "English", name: "en", widget: "string" }
+          - { label: "سنوات الخبرة (مثال: +5)", name: "years", widget: "string" }
+          - label: "شارات الشهادات (تحت الاسم)"
+            name: "certs"
+            widget: "list"
+            summary: "{{fields.ar}}"
+            fields:
+              - { label: "بالعربي", name: "ar", widget: "string" }
+              - { label: "English", name: "en", widget: "string" }
+
+  - name: "about"
+    label: "النبذة (عن نفسي)"
+    files:
+      - name: "about"
+        label: "النبذة الشخصية"
+        file: "data/about.json"
+        fields:
+          - { label: "النبذة (عربي)", name: "ar", widget: "text" }
+          - { label: "About (English)", name: "en", widget: "text" }
+
+  - name: "experience"
+    label: "الخبرة المهنية"
+    files:
+      - name: "experience"
+        label: "كل الخبرات (إضافة / تعديل / حذف)"
+        file: "data/experience.json"
+        fields:
+          - name: "experience"
+            label: "الخبرات"
+            label_singular: "خبرة"
+            widget: "list"
+            summary: "{{fields.role}} — {{fields.company}}"
+            fields:
+              - { label: "المسمى الوظيفي (عربي)", name: "role", widget: "string" }
+              - { label: "Job Title (English)", name: "roleEn", widget: "string", required: false }
+              - { label: "الشركة", name: "company", widget: "string" }
+              - { label: "من (مثال: 05/2025)", name: "from", widget: "string", required: false }
+              - { label: "إلى (سنة أو Present)", name: "to", widget: "string", required: false }
+              - { label: "التفاصيل (عربي)", name: "desc", widget: "text", required: false }
+              - { label: "Details (English)", name: "descEn", widget: "text", required: false }
+
+  - name: "skills"
+    label: "المهارات التقنية"
+    files:
+      - name: "skills"
+        label: "كل المهارات (إضافة / تعديل / حذف)"
+        file: "data/skills.json"
+        fields:
+          - name: "skills"
+            label: "المهارات"
+            label_singular: "مهارة"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "المهارة (عربي)", name: "name", widget: "string" }
+              - { label: "Skill (English)", name: "nameEn", widget: "string", required: false }
+              - { label: "التفاصيل / الأداة (عربي)", name: "detail", widget: "string", required: false }
+              - { label: "Detail (English)", name: "detailEn", widget: "string", required: false }
+
+  - name: "contacts"
+    label: "جهات الاتصال"
+    files:
+      - name: "contacts"
+        label: "كل جهات الاتصال (إضافة / تعديل / حذف)"
+        file: "data/contacts.json"
+        fields:
+          - name: "contacts"
+            label: "جهات الاتصال"
+            label_singular: "جهة اتصال"
+            widget: "list"
+            summary: "{{fields.kind}} — {{fields.value}}"
+            fields:
+              - label: "النوع"
+                name: "kind"
+                widget: "select"
+                options:
+                  - { label: "LinkedIn", value: "linkedin" }
+                  - { label: "إيميل", value: "email" }
+                  - { label: "موبايل", value: "phone" }
+                  - { label: "واتساب", value: "whatsapp" }
+                  - { label: "لينك آخر", value: "other" }
+              - { label: "القيمة (اللينك أو الرقم)", name: "value", widget: "string" }
+              - { label: "وصف مختصر (اختياري)", name: "label", widget: "string", required: false }
+
   - name: "projects"
     label: "المشاريع"
     label_singular: "مشروع"
