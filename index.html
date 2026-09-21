@@ -910,7 +910,7 @@ function renderCertifications(){
     if(c.expiry) tags.push(`<span class="cert-tag"><b>${isAr?'ينتهي':'Expires'}:</b> ${escapeHtml(c.expiry)}</span>`);
     if(c.number) tags.push(`<span class="cert-tag"><b>${isAr?'رقم':'ID'}:</b> ${escapeHtml(c.number)}</span>`);
     const verify = c.url ? `<a class="cert-verify" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">🔗 ${isAr?'تحقّق من الشهادة':'Verify credential'}</a>` : '';
-    const img = c.image ? `<button type="button" class="cert-img" onclick="openCertImage('${jsArg(c.image)}','${jsArg(name)}')" title="${isAr?'عرض الشهادة':'View certificate'}"><img src="${escapeHtml(c.image)}" alt="${escapeHtml(name)}" loading="lazy"></button>` : '';
+    const img = c.image ? `<button type="button" class="cert-img" onclick="openCertImage('${jsArg(c.image)}','${jsArg(name)}')" title="${isAr?'عرض الشهادة':'View certificate'}"><img src="${escapeHtml(c.image)}" alt="${escapeHtml(name)}"></button>` : '';
     return `<div class="cert-card">
       <div class="cert-top">
         <div class="cert-ico">🎖️</div>
@@ -1921,5 +1921,40 @@ applyLang();
       }
     }
   } catch(e) { /* keep empty certifications fallback */ }
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/hero.json', {cache: 'no-store'});
+    if(res.ok){ const j = await res.json(); if(j && j.name && j.title){ hero = j; renderHero(); } }
+  } catch(e) {}
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/about.json', {cache: 'no-store'});
+    if(res.ok){ const j = await res.json(); if(j && (typeof j.ar === 'string' || typeof j.en === 'string')){ about = j; renderAbout(); } }
+  } catch(e) {}
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/skills.json', {cache: 'no-store'});
+    if(res.ok){ const j = await res.json(); if(j && Array.isArray(j.skills)){ skills = j.skills; renderSkills(); } }
+  } catch(e) {}
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/experience.json', {cache: 'no-store'});
+    if(res.ok){ const j = await res.json(); if(j && Array.isArray(j.experience)){ experience = j.experience; renderExperience(); } }
+  } catch(e) {}
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/contacts.json', {cache: 'no-store'});
+    if(res.ok){ const j = await res.json(); if(j && Array.isArray(j.contacts)){ contacts = j.contacts; renderContacts(); } }
+  } catch(e) {}
 })();
 </script>
