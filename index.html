@@ -43,6 +43,22 @@ nav{background:linear-gradient(135deg,var(--d2),#0D1626,var(--d2));border-bottom
 .profile-location{color:var(--muted);font-size:.85rem;margin-bottom:16px;}
 .profile-certs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
 .cert-badge{background:var(--d3);border:1px solid var(--gold-d);color:var(--gold-l);font-size:.72rem;padding:5px 12px;border-radius:6px;font-weight:700;}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.cert-card{background:var(--d3);border:1px solid var(--d4);border-radius:12px;padding:16px 18px 16px 22px;display:flex;flex-direction:column;gap:9px;transition:.2s;position:relative;overflow:hidden;}
+.cert-card::before{content:'';position:absolute;top:0;inset-inline-start:0;width:4px;height:100%;background:linear-gradient(var(--gold),var(--gold-d));}
+.cert-top{display:flex;align-items:flex-start;gap:12px;}
+.cert-ico{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--gold-d),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.cert-name{font-weight:800;font-size:.95rem;line-height:1.4;}
+.cert-issuer{color:var(--gold-l);font-size:.8rem;font-weight:600;margin-top:2px;}
+.cert-meta{display:flex;flex-wrap:wrap;gap:6px;}
+.cert-tag{background:var(--d2);border:1px solid var(--d4);color:var(--muted);font-size:.68rem;padding:3px 9px;border-radius:20px;}
+.cert-tag b{color:var(--txt);font-weight:700;}
+.cert-verify{display:inline-flex;align-items:center;gap:5px;color:var(--gold);font-size:.72rem;font-weight:700;text-decoration:none;width:fit-content;}
+.cert-verify:hover{text-decoration:underline;}
+.cert-img{display:block;width:100%;margin-top:2px;padding:0;border:1px solid var(--d4);border-radius:8px;overflow:hidden;background:var(--d2);cursor:pointer;}
+.cert-img img{display:block;width:100%;height:auto;max-height:160px;object-fit:cover;object-position:top;transition:.2s;}
+.cert-img:hover img{opacity:.82;}
+.certs-grid .cert-empty{color:var(--muted);font-size:.82rem;grid-column:1/-1;}
 .contact-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .contact-links{display:flex;gap:10px;flex-wrap:wrap;}
 .contact-link{background:var(--d3);border:1px solid var(--d4);color:var(--txt);padding:8px 14px;border-radius:8px;font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s;}
@@ -276,14 +292,19 @@ input:checked+.slider::before{transform:translateX(18px);background:var(--gold);
       <div class="about-text" id="aboutText"></div>
     </div>
 
-    <div class="profile-card">
-      <div class="card-heading"><span data-ar="المهارات التقنية" data-en="Technical Skills">المهارات التقنية</span><button class="mini-edit admin-only" onclick="openSkillsModal()">✏️ <span data-ar="تعديل" data-en="Edit">تعديل</span></button></div>
-      <div class="skills-grid" id="skillsGrid"></div>
-    </div>
-
-    <div class="profile-card">
+    <div class="profile-card full">
       <div class="card-heading"><span data-ar="الخبرة المهنية" data-en="Experience">الخبرة المهنية</span><button class="mini-edit admin-only" onclick="openExpModal()">✏️ <span data-ar="تعديل" data-en="Edit">تعديل</span></button></div>
       <div class="exp-list" id="expList"></div>
+    </div>
+
+    <div class="profile-card full">
+      <div class="card-heading"><span data-ar="الشهادات والاعتمادات" data-en="Certifications &amp; Credentials">الشهادات والاعتمادات</span></div>
+      <div class="certs-grid" id="certsGrid"></div>
+    </div>
+
+    <div class="profile-card full">
+      <div class="card-heading"><span data-ar="المهارات التقنية" data-en="Technical Skills">المهارات التقنية</span><button class="mini-edit admin-only" onclick="openSkillsModal()">✏️ <span data-ar="تعديل" data-en="Edit">تعديل</span></button></div>
+      <div class="skills-grid" id="skillsGrid"></div>
     </div>
 
     <div class="profile-card full admin-only">
@@ -639,6 +660,7 @@ const READ_ONLY = true; // public build — visitors cannot add or edit anything
 const DEFAULT_BANDS = ['خرسانات','حدادة','مباني','محارة','تشطيبات','سيراميك','صحي','كهرباء','عزل','واجهات','أصباغ','ألوميتال','نجارة'];
 
 let hero = {"name": {"ar": "خالد كمال", "en": "Khaled Kamal"}, "title": {"ar": "مهندس مدني | إدارة وتنفيذ المشاريع الإنشائية", "en": "Civil Engineer | Construction Management & Site Execution"}, "loc": {"ar": "الكويت", "en": "Kuwait"}, "years": "+5", "certs": [{"ar": "PMP® — PMI", "en": "PMP® — PMI"}, {"ar": "بكالوريوس هندسة مدنية", "en": "B.Sc. Civil Engineering"}]};
+let certifications = [];
 
 let about = {"ar": "أحوّل الرسومات الهندسية إلى مباني قائمة — في الوقت المحدد، وضمن الميزانية، وطبقاً للمواصفات.\n\nبخبرة تزيد عن 5 سنوات في إدارة المشاريع الإنشائية بين الكويت ومصر، سلّمت 18 مشروعاً من وضع حجر الأساس حتى التسليم النهائي — 9 في الكويت منها 7 قسائم سكنية وترميم مسبح نادٍ صحي وخزان مياه محلّاة بسعة تتجاوز 350,000 م³، و9 في مصر: مدرسة كبيرة، ومبنى إدارة تعليمية، ومركز طبي، وفيلتين، و4 خزانات تحت الأرض.\n\nما أقدمه في كل مشروع:\n← إشراف كامل على الموقع وتنفيذ الأعمال الإنشائية والتشطيبات\n← حصر الكميات وإعداد جداول الـ BOQ ومراجعة الشوب دروينج\n← تنسيق مقاولي الباطن ومراقبة الجودة\n← متابعة التقدم وفقاً لمعايير إدارة المشاريع PMP®\n\nعملت عبر دورة حياة المشروع كاملة — بالتنسيق مع الاستشاريين والملاك والموردين، وإدارة توريد المواد، والتأكد من مطابقة كل الأعمال للرسومات المعتمدة والمواصفات.\n\nمقيم حالياً في الكويت، وأسعى للتطور نحو أدوار قيادية في إدارة المشاريع الإنشائية أجمع فيها بين خبرتي الميدانية ومعرفتي بمعايير PMP® لتسليم مشاريع أكبر وأكثر تعقيداً.\n\n📌 متاح لفرص في: إدارة الإنشاءات | إدارة المشاريع | هندسة الموقع | حصر الكميات\n\nإذا كنت تبني شيئاً عظيماً — دعنا نتواصل.", "en": "I turn blueprints into buildings — on time, on budget, and to spec.\n\nWith 5+ years of construction management across Kuwait and Egypt, I've delivered 18+ projects from groundbreaking to handover — 9+ in Kuwait, including 7 residential plots, a health club renovation, and a 350,000+ m³ water reservoir; and 9+ in Egypt: a large school, an educational administration building, a medical center, 2 villas, and 4 underground tanks.\n\nWhat I bring to every project:\n→ End-to-end site supervision & structural/finishing works execution\n→ Quantity surveying, BOQ preparation & shop drawing review\n→ Subcontractor coordination & quality control\n→ Progress monitoring aligned with PMP® project management standards\n\nI've worked across the full project lifecycle — coordinating with consultants, clients, and suppliers, managing material procurement, and ensuring every activity meets approved drawings and specifications.\n\nCurrently based in Kuwait, I'm focused on growing into senior construction management roles where I can combine my field experience with my PMP® knowledge to deliver larger, more complex projects.\n\n📌 Open to opportunities in: Construction Management | Project Management | Site Engineering | Quantity Surveying\n\nLet's connect if you're building something great."};
 
@@ -770,6 +792,7 @@ function applyLang(){
   renderHero();
   renderAbout();
   renderSkills();
+  renderCertifications();
   renderContacts();
   renderExperience();
   renderCompanyFilters();
@@ -867,6 +890,43 @@ function renderHero(){
   document.getElementById('heroTitle').textContent = t(hero.title);
   document.getElementById('heroLocation').textContent = '📍 ' + t(hero.loc) + '  ·  ' + hero.years + ' ' + (isAr ? 'سنوات خبرة' : 'years experience');
   document.getElementById('heroCerts').innerHTML = hero.certs.map(c => '<span class="cert-badge">' + escapeHtml(t(c)) + '</span>').join('');
+}
+
+function renderCertifications(){
+  const isAr = lang === 'ar';
+  const pick = (a, e) => isAr ? (a || e || '') : (e || a || '');
+  const grid = document.getElementById('certsGrid');
+  if(!grid) return;
+  const list = Array.isArray(certifications) ? certifications : [];
+  if(!list.length){
+    grid.innerHTML = `<p class="cert-empty">${isAr?'لا توجد شهادات مضافة بعد':'No certifications added yet'}</p>`;
+    return;
+  }
+  grid.innerHTML = list.map(c => {
+    const name   = pick(c.name, c.nameEn);
+    const issuer = pick(c.issuer, c.issuerEn);
+    const tags = [];
+    if(c.date)   tags.push(`<span class="cert-tag"><b>${isAr?'الإصدار':'Issued'}:</b> ${escapeHtml(c.date)}</span>`);
+    if(c.expiry) tags.push(`<span class="cert-tag"><b>${isAr?'ينتهي':'Expires'}:</b> ${escapeHtml(c.expiry)}</span>`);
+    if(c.number) tags.push(`<span class="cert-tag"><b>${isAr?'رقم':'ID'}:</b> ${escapeHtml(c.number)}</span>`);
+    const verify = c.url ? `<a class="cert-verify" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">🔗 ${isAr?'تحقّق من الشهادة':'Verify credential'}</a>` : '';
+    const img = c.image ? `<button type="button" class="cert-img" onclick="openCertImage('${jsArg(c.image)}','${jsArg(name)}')" title="${isAr?'عرض الشهادة':'View certificate'}"><img src="${escapeHtml(c.image)}" alt="${escapeHtml(name)}" loading="lazy"></button>` : '';
+    return `<div class="cert-card">
+      <div class="cert-top">
+        <div class="cert-ico">🎖️</div>
+        <div><div class="cert-name">${escapeHtml(name)}</div>${issuer?`<div class="cert-issuer">${escapeHtml(issuer)}</div>`:''}</div>
+      </div>
+      ${tags.length?`<div class="cert-meta">${tags.join('')}</div>`:''}
+      ${verify}
+      ${img}
+    </div>`;
+  }).join('');
+}
+
+function openCertImage(src, caption){
+  lbList = [{src: src, caption: caption || ''}];
+  lbIndex = 0;
+  showLightbox();
 }
 
 function openHeroModal(){
@@ -1848,5 +1908,18 @@ applyLang();
       }
     }
   } catch(e) { /* keep the baked-in fallback projects (text only, no photos) */ }
+})();
+
+(async function(){
+  try {
+    const res = await fetch('data/certifications.json', {cache: 'no-store'});
+    if(res.ok){
+      const j = await res.json();
+      if(j && Array.isArray(j.certifications)){
+        certifications = j.certifications;
+        renderCertifications();
+      }
+    }
+  } catch(e) { /* keep empty certifications fallback */ }
 })();
 </script>
