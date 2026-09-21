@@ -1,3 +1,15 @@
 {
-  "certifications": []
+  "certifications": [
+    {
+      "name": "بكالوريوس الهندسة المدنية — تقدير جيد جداً",
+      "nameEn": "B.Sc. in Civil Engineering — Very Good (GPA 3.21/4)",
+      "issuer": "جامعة سيناء – كلية الهندسة، العريش",
+      "issuerEn": "Sinai University – Faculty of Engineering, El Arish",
+      "image": "uploads/certs/grad.webp",
+      "date": "July 2021",
+      "expiry": "",
+      "number": "",
+      "url": ""
+    }
+  ]
 }
