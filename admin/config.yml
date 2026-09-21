@@ -9,6 +9,35 @@ media_folder: "uploads"
 public_folder: "uploads"
 
 collections:
+  - name: "certifications"
+    label: "الشهادات"
+    label_singular: "شهادة"
+    files:
+      - name: "certifications"
+        label: "كل الشهادات (إضافة / تعديل / حذف)"
+        file: "data/certifications.json"
+        fields:
+          - name: "certifications"
+            label: "الشهادات"
+            label_singular: "شهادة"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "اسم الشهادة (عربي)", name: "name", widget: "string" }
+              - { label: "Certificate Name (English)", name: "nameEn", widget: "string", required: false }
+              - { label: "الجهة المانحة (عربي)", name: "issuer", widget: "string", required: false }
+              - { label: "Issuer (English)", name: "issuerEn", widget: "string", required: false }
+              - label: "صورة الشهادة (اختياري)"
+                name: "image"
+                widget: "image"
+                required: false
+                media_folder: "uploads/certs"
+                public_folder: "uploads/certs"
+              - { label: "تاريخ الإصدار (مثال: May 2026)", name: "date", widget: "string", required: false }
+              - { label: "تاريخ الانتهاء (اختياري)", name: "expiry", widget: "string", required: false }
+              - { label: "رقم الشهادة (اختياري)", name: "number", widget: "string", required: false }
+              - { label: "رابط التحقق (اختياري)", name: "url", widget: "string", required: false }
+
   - name: "projects"
     label: "المشاريع"
     label_singular: "مشروع"
