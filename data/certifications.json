@@ -10,6 +10,17 @@
       "expiry": "",
       "number": "",
       "url": ""
+    },
+    {
+      "name": "إدارة المشاريع الاحترافية (PMP)®",
+      "nameEn": "Project Management Professional (PMP)®",
+      "issuer": "معهد إدارة المشاريع (PMI)",
+      "issuerEn": "Project Management Institute (PMI)",
+      "image": "uploads/certs/pmp.jpg",
+      "date": "May 2026",
+      "expiry": "May 2029",
+      "number": "4382509",
+      "url": ""
     }
   ]
 }
