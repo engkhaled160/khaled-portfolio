@@ -23,17 +23,6 @@
       "url": "https://www.pmi.org/certifications/certification-resources/registry"
     },
     {
-      "name": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
-      "nameEn": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
-      "issuer": "",
-      "issuerEn": "BENAA Academy (Engineering Training Company)",
-      "image": "uploads/certs/pasted-image-1790153548431.png",
-      "date": "",
-      "expiry": "",
-      "number": "506636",
-      "url": "https://benaa-academy.com/certificate_validation"
-    },
-    {
       "name": "Construction Site Engineering Course | Online",
       "nameEn": "Construction Site Engineering Course | Online",
       "issuer": "",
@@ -42,6 +31,17 @@
       "date": "",
       "expiry": "",
       "number": "506635",
+      "url": "https://benaa-academy.com/certificate_validation"
+    },
+    {
+      "name": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
+      "nameEn": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
+      "issuer": "",
+      "issuerEn": "BENAA Academy (Engineering Training Company)",
+      "image": "uploads/certs/pasted-image-1790153548431.png",
+      "date": "",
+      "expiry": "",
+      "number": "506636",
       "url": "https://benaa-academy.com/certificate_validation"
     }
   ]
