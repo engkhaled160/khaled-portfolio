@@ -31,6 +31,18 @@
             "uploads/updates/WhatsApp Image 2026-09-19 at 10.11.13 AM (2).jpeg",
             "uploads/updates/WhatsApp Image 2026-09-19 at 10.11.13 AM (1).jpeg"
           ]
+        },
+        {
+          "type": "update",
+          "date": "20/08/2026",
+          "band": "Shoring System",
+          "text": "Excavation Support System — Soldier Piles & Timber Lagging\n\nFollowing completion of the first-phase excavation, a temporary shoring system was implemented to support the excavation walls. The system selected was a combination of steel I-beam soldier piles and timber lagging.\n\nSystem Overview\n\nVertical steel I-beams (soldier piles) are installed at engineered spacing intervals around the perimeter of the excavation. As excavation proceeds in stages, timber lagging boards are installed between the beams to retain the surrounding soil and prevent lateral collapse. The system is further stabilized using ground anchors, which transfer lateral earth pressure into the surrounding soil and eliminate the need for internal bracing.\n\nKey Advantages\n\nRapid installation with high adaptability to site conditions\nCost-effective relative to alternative systems such as secant or contiguous pile walls\nTimber lagging can be adjusted during excavation to suit varying soil conditions\nGround anchors keep the excavation clear of internal supports, improving access for equipment and site operations\nSuitable for medium-depth excavations in soils capable of supporting lagging\n\nDesign Consideration\n\nThe system does not provide a watertight barrier. In conditions with a high groundwater table, supplementary dewatering or groundwater control measures are required.\n\nSelection Criteria\n\nThe choice of shoring system was based on an assessment of soil conditions, excavation depth, proximity to adjacent structures, and project budget and schedule constraints.",
+          "public": true,
+          "photos": [
+            "uploads/updates/pasted-image-1790152841881.png",
+            "uploads/updates/pasted-image-1790152850450.png",
+            "uploads/updates/pasted-image-1790152858530.png"
+          ]
         }
       ],
       "id": 1788165629345
