@@ -9,7 +9,7 @@
       "date": "July 2021",
       "expiry": "",
       "number": "",
-      "url": ""
+      "url": "https://www.su.edu.eg"
     },
     {
       "name": "إدارة المشاريع الاحترافية (PMP)®",
@@ -18,9 +18,20 @@
       "issuerEn": "Project Management Institute (PMI)",
       "image": "uploads/certs/pmp.jpg",
       "date": "May 2026",
-      "expiry": "May 2029",
+      "expiry": "",
       "number": "4382509",
-      "url": ""
+      "url": "https://www.pmi.org/certifications/certification-resources/registry"
+    },
+    {
+      "name": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
+      "nameEn": "Engineering Drawings – MEP Course | Online certification covering MEP (Mechanical, Electrical, Plumbing) engineering drawings.",
+      "issuer": "",
+      "issuerEn": "BENAA Academy (Engineering Training Company)",
+      "image": "uploads/certs/pasted-image-1790153548431.png",
+      "date": "",
+      "expiry": "",
+      "number": "506636",
+      "url": "https://benaa-academy.com/certificate_validation"
     }
   ]
 }
