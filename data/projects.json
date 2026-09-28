@@ -50,6 +50,16 @@
             "uploads/updates/pasted-image-1790153129785.png",
             "uploads/updates/pasted-image-1790153140723.png"
           ]
+        },
+        {
+          "type": "update",
+          "date": "10/9/2026",
+          "band": "Ground Anchors System",
+          "text": "Ground Anchors: The Hidden Strength Behind Deep Excavation ⚓\nFollowing my previous posts on excavation and the shoring system for an administrative and commercial tower in Kuwait, here is the next stage: ground anchors (tiebacks).\nWhat is a ground anchor?\nAs excavation goes deeper, the soil behind the shoring wall pushes harder against it. A ground anchor is a steel tendon installed at an angle behind the wall and bonded with grout into stable soil. It ties the wall back to the ground, so the earth itself resists the pressure.\nExecution sequence:\n1️⃣ Drilling: An inclined hole is drilled through the wall between the soldier piles at the designed angle and length, extending beyond the potential failure zone into stable soil.\n2️⃣ Steel installation: The steel bar (tendon) is inserted into the drilled hole and positioned to keep proper grout cover along its length.\n3️⃣ Grouting in stages: Cement grout is pumped in phases. The goal is to form a solid bond zone that transfers the load from the steel to the surrounding soil.\n4️⃣ Stressing: Once the grout reaches its required strength, the anchor is tensioned with a hydraulic jack against the steel waler beam. This verifies its capacity and activates it to carry load.\n5️⃣ Lock-off: After stressing, the anchor is locked against the bearing plate on the waler. This keeps the tension permanently in place, and the wall is now actively restrained.\nWhy it matters:\n✅ Controls wall deflection and prevents soil movement\n✅ Protects neighboring buildings, roads, and utilities\n✅ Allows safe excavation to deeper levels\n✅ Keeps the excavation area free of internal struts, which gives more space for equipment and faster progress\nEvery anchor is a small detail. Together, they are what keeps a deep excavation safe in a dense urban site.",
+          "public": true,
+          "photos": [
+            "uploads/updates/pasted-image-1790581543590.png"
+          ]
         }
       ],
       "id": 1788165629345
